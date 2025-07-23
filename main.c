@@ -4,12 +4,10 @@
 #include<windows.h>
 #include<stdlib.h>
 #include<time.h>
-
 #include "login.h"
-#include "product.h"
 #include "layout.h"
 #include "splash.h"
-
+#include "product.h"
 
 
 void exitApp() {
@@ -43,10 +41,19 @@ void productMenu()
 	        case 1:  
 	            addProduct(); 
 				break;
-	        case 2:  break;
-	        case 3:  break;
-	        case 4:  break;
-	        case 5:  break;
+	        case 2:  
+	        	
+				productList();
+				break;
+	        case 3:  
+				searchProduct();
+				break;
+	        case 4:  
+				updateProduct();
+				break;
+	        case 5:  
+				deleteProduct();
+				break;
 	        case 6:  
 				return;
 	    }
@@ -79,7 +86,6 @@ void mainmenu() {
         
 		printText("Enter your choice: ", 16,50);
         gotoxy(70, 16);
-        //choice = getche();
         scanf("%d",&choice);
         switch (choice) {
             case 1:  productMenu();break;
